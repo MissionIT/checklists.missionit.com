@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<oval-def:oval_definitions xmlns:ind="http://oval.mitre.org/XMLSchema/oval-definitions-5#independent" xmlns:linux="http://oval.mitre.org/XMLSchema/oval-definitions-5#linux" xmlns:oval="http://oval.mitre.org/XMLSchema/oval-common-5" xmlns:oval-def="http://oval.mitre.org/XMLSchema/oval-definitions-5" xmlns:unix="http://oval.mitre.org/XMLSchema/oval-definitions-5#unix" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://oval.mitre.org/XMLSchema/oval-common-5 oval-common-schema.xsd  http://oval.mitre.org/XMLSchema/oval-definitions-5 oval-definitions-schema.xsd  http://oval.mitre.org/XMLSchema/oval-definitions-5#independent independent-definitions-schema.xsd  http://oval.mitre.org/XMLSchema/oval-definitions-5#unix unix-definitions-schema.xsd  http://oval.mitre.org/XMLSchema/oval-definitions-5#linux linux-definitions-schema.xsd">
+  <oval-def:generator>
+    <oval:product_name>build_cpe.py from SCAP Security Guide</oval:product_name>
+    <oval:product_version>ssg: [0, 1, 82], python: 3.14.6</oval:product_version>
+    <oval:schema_version>5.11.2</oval:schema_version>
+    <oval:timestamp>2026-08-10T21:09:33</oval:timestamp>
+  </oval-def:generator>
+  <oval-def:definitions>
+    <oval-def:definition id="oval:ssg-system_with_kernel:def:1" version="1" class="inventory">
+      <oval-def:metadata>
+        <oval-def:title/>
+        <oval-def:affected family="unix">
+          <oval-def:platform>Ubuntu 26.04</oval-def:platform>
+        </oval-def:affected>
+        <oval-def:description>The kernel is installed</oval-def:description>
+      </oval-def:metadata>
+      <oval-def:criteria operator="OR">
+        <oval-def:criterion comment="kernel is installed" test_ref="oval:ssg-inventory_test_kernel_installed:tst:1"/>
+      </oval-def:criteria>
+    </oval-def:definition>
+    <oval-def:definition id="oval:ssg-installed_OS_is_part_of_Unix_family:def:1" version="1" class="inventory">
+      <oval-def:metadata>
+        <oval-def:title>Installed operating system is part of the Unix family</oval-def:title>
+        <oval-def:affected family="unix">
+          <oval-def:platform>Ubuntu 26.04</oval-def:platform>
+        </oval-def:affected>
+        <oval-def:description>The operating system installed on the system is part of the Unix OS family</oval-def:description>
+      </oval-def:metadata>
+      <oval-def:criteria operator="AND">
+        <oval-def:criterion comment="Installed operating system is part of the unix family" test_ref="oval:ssg-test_unix_family:tst:1"/>
+      </oval-def:criteria>
+    </oval-def:definition>
+    <oval-def:definition id="oval:ssg-installed_OS_is_ubuntu:def:1" version="1" class="inventory">
+      <oval-def:metadata>
+        <oval-def:title>Ubuntu</oval-def:title>
+        <oval-def:affected family="unix">
+          <oval-def:platform>Ubuntu 26.04</oval-def:platform>
+        </oval-def:affected>
+        <oval-def:description>The operating system installed is an Ubuntu System</oval-def:description>
+      </oval-def:metadata>
+      <oval-def:criteria comment="System is Ubuntu" operator="AND">
+        <oval-def:extend_definition comment="Installed OS is part of the Unix family" definition_ref="oval:ssg-installed_OS_is_part_of_Unix_family:def:1"/>
+        <oval-def:criterion comment="lsb-based distrib" test_ref="oval:ssg-test_lsb:tst:1"/>
+        <oval-def:criterion comment="Ubuntu is installed" test_ref="oval:ssg-test_ubuntu:tst:1"/>
+      </oval-def:criteria>
+    </oval-def:definition>
+    <oval-def:definition id="oval:ssg-installed_OS_is_ubuntu2604:def:1" version="1" class="inventory">
+      <oval-def:metadata>
+        <oval-def:title>Ubuntu 26.04 LTS</oval-def:title>
+        <oval-def:affected family="unix">
+          <oval-def:platform>Ubuntu 26.04</oval-def:platform>
+        </oval-def:affected>
+        <oval-def:reference ref_id="cpe:/o:canonical:ubuntu_linux:26.04" source="CPE"/>
+        <oval-def:description>The operating system installed on the system is Ubuntu 26.04 LTS</oval-def:description>
+      </oval-def:metadata>
+      <oval-def:criteria comment="current Ubuntu version is Resolute" operator="AND">
+        <oval-def:extend_definition comment="Ubuntu is installed" definition_ref="oval:ssg-installed_OS_is_ubuntu:def:1"/>
+        <oval-def:criterion comment="Resolute is installed" test_ref="oval:ssg-test_ubuntu_resolute:tst:1"/>
+      </oval-def:criteria>
+    </oval-def:definition>
+    <oval-def:definition id="oval:ssg-package_ufw:def:1" version="1" class="inventory">
+      <oval-def:metadata>
+        <oval-def:title>Package ufw is installed</oval-def:title>
+        <oval-def:affected family="unix">
+          <oval-def:platform>Ubuntu 26.04</oval-def:platform>
+        </oval-def:affected>
+        <oval-def:description>The DPKG package ufw should be installed.</oval-def:description>
+      </oval-def:metadata>
+      <oval-def:criteria operator="AND">
+        <oval-def:criterion comment="Platform package ufw is installed" test_ref="oval:ssg-inventory_test_package_ufw_installed:tst:1"/>
+      </oval-def:criteria>
+    </oval-def:definition>
+  </oval-def:definitions>
+  <oval-def:tests>
+    <linux:dpkginfo_test id="oval:ssg-inventory_test_kernel_installed:tst:1" version="1" check="all" comment="package linux-base is installed" check_existence="all_exist" state_operator="AND">
+      <linux:object object_ref="oval:ssg-obj_inventory_test_kernel_installed:obj:1"/>
+    </linux:dpkginfo_test>
+    <ind:family_test id="oval:ssg-test_unix_family:tst:1" version="1" check="all" comment="Test installed OS is part of the unix family" state_operator="AND">
+      <ind:object object_ref="oval:ssg-object_unix_family:obj:1"/>
+      <ind:state state_ref="oval:ssg-state_unix_family:ste:1"/>
+    </ind:family_test>
+    <unix:file_test id="oval:ssg-test_lsb:tst:1" version="1" check="all" comment="/etc/lsb-release exists" check_existence="all_exist" state_operator="AND">
+      <unix:object object_ref="oval:ssg-obj_lsb:obj:1"/>
+    </unix:file_test>
+    <ind:textfilecontent54_test id="oval:ssg-test_ubuntu:tst:1" version="1" check="all" comment="Check Ubuntu" state_operator="AND">
+      <ind:object object_ref="oval:ssg-obj_ubuntu:obj:1"/>
+    </ind:textfilecontent54_test>
+    <ind:textfilecontent54_test id="oval:ssg-test_ubuntu_resolute:tst:1" version="1" check="all" comment="Check Ubuntu version" state_operator="AND">
+      <ind:object object_ref="oval:ssg-obj_ubuntu_resolute:obj:1"/>
+    </ind:textfilecontent54_test>
+    <linux:dpkginfo_test id="oval:ssg-inventory_test_package_ufw_installed:tst:1" version="1" check="all" comment="package ufw is installed" check_existence="all_exist" state_operator="AND">
+      <linux:object object_ref="oval:ssg-obj_inventory_test_package_ufw_installed:obj:1"/>
+    </linux:dpkginfo_test>
+  </oval-def:tests>
+  <oval-def:objects>
+    <linux:dpkginfo_object id="oval:ssg-obj_inventory_test_kernel_installed:obj:1" version="1">
+      <linux:name>linux-base</linux:name>
+    </linux:dpkginfo_object>
+    <ind:family_object id="oval:ssg-object_unix_family:obj:1" version="1"/>
+    <unix:file_object id="oval:ssg-obj_lsb:obj:1" version="1" comment="check /etc/lsb-release file">
+      <unix:filepath>/etc/lsb-release</unix:filepath>
+    </unix:file_object>
+    <ind:textfilecontent54_object id="oval:ssg-obj_ubuntu:obj:1" version="1" comment="Check Ubuntu">
+      <ind:filepath>/etc/lsb-release</ind:filepath>
+      <ind:pattern operation="pattern match">^DISTRIB_ID=Ubuntu$</ind:pattern>
+      <ind:instance datatype="int">1</ind:instance>
+    </ind:textfilecontent54_object>
+    <ind:textfilecontent54_object id="oval:ssg-obj_ubuntu_resolute:obj:1" version="1" comment="Check Ubuntu version">
+      <ind:filepath>/etc/lsb-release</ind:filepath>
+      <ind:pattern operation="pattern match">^DISTRIB_CODENAME=resolute$</ind:pattern>
+      <ind:instance datatype="int">1</ind:instance>
+    </ind:textfilecontent54_object>
+    <linux:dpkginfo_object id="oval:ssg-obj_inventory_test_package_ufw_installed:obj:1" version="1">
+      <linux:name>ufw</linux:name>
+    </linux:dpkginfo_object>
+  </oval-def:objects>
+  <oval-def:states>
+    <ind:family_state id="oval:ssg-state_unix_family:ste:1" version="1" operator="AND">
+      <ind:family>unix</ind:family>
+    </ind:family_state>
+  </oval-def:states>
+</oval-def:oval_definitions>

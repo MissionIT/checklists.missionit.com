@@ -12,7 +12,7 @@ export default defineConfig({
         Hero: './src/components/Hero.astro',
       },
       logo: {
-        src: './src/assets/Mission_IT_and_NIST_National_Checklist_NCP_Program_Logo.png',
+        src: './src/assets/Mission_IT_and_the_NIST_National_Checklist_Program_NIST_NCP.svg',
         replacesTitle: false
       },
       title: 'Mission IT Checklists',
