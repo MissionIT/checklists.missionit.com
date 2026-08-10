@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='utf-8'?>
+<ocil:ocil xmlns:ocil="http://scap.nist.gov/schema/ocil/2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <ocil:generator>
+    <ocil:product_name>build_shorthand.py from SCAP Security Guide</ocil:product_name>
+    <ocil:product_version>ssg: 0.1.81</ocil:product_version>
+    <ocil:schema_version>2.0</ocil:schema_version>
+    <ocil:timestamp>2026-07-10T18:45:38</ocil:timestamp>
+  </ocil:generator>
+  <ocil:questionnaires>
+    <ocil:questionnaire id="ocil:ssg-losant_workload_is_deployed_ocil:questionnaire:1">
+      <ocil:title>The SUSE Industrial Edge application must be deployed on Kubernetes</ocil:title>
+      <ocil:actions>
+        <ocil:test_action_ref>ocil:ssg-losant_workload_is_deployed_action:testaction:1</ocil:test_action_ref>
+      </ocil:actions>
+    </ocil:questionnaire>
+  </ocil:questionnaires>
+  <ocil:test_actions>
+    <ocil:boolean_question_test_action id="ocil:ssg-losant_workload_is_deployed_action:testaction:1" question_ref="ocil:ssg-losant_workload_is_deployed_question:question:1">
+      <ocil:when_true>
+        <ocil:result>PASS</ocil:result>
+      </ocil:when_true>
+      <ocil:when_false>
+        <ocil:result>FAIL</ocil:result>
+      </ocil:when_false>
+    </ocil:boolean_question_test_action>
+  </ocil:test_actions>
+  <ocil:questions>
+    <ocil:boolean_question id="ocil:ssg-losant_workload_is_deployed_question:question:1">
+      <ocil:question_text>Run the following command with credentials authorized to inspect workloads:
+kubectl get deployments,statefulsets,pods --all-namespaces
+
+Verify that the expected Losant workload is present and that it runs in an
+organization-approved namespace. If it is absent or runs in an unapproved
+namespace, this is a finding.
+      Is it the case that the expected SUSE Industrial Edge workload is not present in an approved Kubernetes namespace?
+      </ocil:question_text>
+    </ocil:boolean_question>
+  </ocil:questions>
+</ocil:ocil>
