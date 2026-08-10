@@ -220,6 +220,9 @@ docs-site/.astro/
 
 
 .DS_Store
+._.DS_Store
+**/.DS_Store
+**/._.DS_Store
 .test-venv/
 audit.jsonl
 /certs/   

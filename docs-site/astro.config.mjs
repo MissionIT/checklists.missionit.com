@@ -12,7 +12,7 @@ export default defineConfig({
         Hero: './src/components/Hero.astro',
       },
       logo: {
-        src: './src/assets/hunting.png',
+        src: './src/assets/Mission_IT_and_NIST_National_Checklist_NCP_Program_Logo.png',
         replacesTitle: false
       },
       title: 'Mission IT Checklists',
@@ -31,45 +31,14 @@ export default defineConfig({
           ],
         },
         {
-          label: 'Usage',
+          label: 'Claroty CTD',
           items: [
-            { label: 'CLI Commands', slug: 'usage/cli' },
-            { label: 'Transport Methods', slug: 'usage/transports' },
-            { label: 'Editor Integration', slug: 'usage/editor-integration' },
-            { label: 'Flight Control (MSSP)', slug: 'usage/flight-control' },
+            { label: 'Installation', slug: 'usage/cli' },
+            { label: 'Configuration', slug: 'usage/transports' },
+            { label: 'Quick Start', slug: 'usage/editor-integration' },
+            { label: 'Tutorials', slug: 'usage/flight-control' },
           ],
         },
-        {
-          label: 'Modules',
-          autogenerate: { directory: 'modules' },
-        },
-        {
-          label: 'Deployment',
-          items: [
-            { label: 'Docker', slug: 'deployment/docker' },
-            { label: 'Amazon Bedrock', slug: 'deployment/amazon-bedrock' },
-            { label: 'Google Cloud', slug: 'deployment/google-cloud' },
-          ],
-        },
-        {
-          label: 'Development',
-          items: [
-            { label: 'Contributing', slug: 'development/contributing' },
-            { label: 'Module Development', slug: 'development/module-development' },
-            { label: 'Resource Development', slug: 'development/resource-development' },
-            { label: 'Integration Testing', slug: 'development/integration-testing' },
-            { label: 'E2E Testing', slug: 'development/e2e-testing' },
-            { label: 'Docs Site Guide', slug: 'development/docs-site' },
-          ],
-        },
-        {
-          label: 'Examples',
-          items: [
-            { label: 'Basic Usage', slug: 'examples/basic-usage' },
-            { label: 'MCP Config', slug: 'examples/mcp-config' },
-          ],
-        },
-        { label: 'Changelog', slug: 'changelog' },
       ],
     }),
   ],
