@@ -1,0 +1,535 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ds:data-stream-collection xmlns:cat="urn:oasis:names:tc:entity:xmlns:xml:catalog" xmlns:cpe-dict="http://cpe.mitre.org/dictionary/2.0" xmlns:cpe-lang="http://cpe.mitre.org/language/2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:ds="http://scap.nist.gov/schema/scap/source/1.2" xmlns:ind="http://oval.mitre.org/XMLSchema/oval-definitions-5#independent" xmlns:ocil="http://scap.nist.gov/schema/ocil/2.0" xmlns:oval="http://oval.mitre.org/XMLSchema/oval-common-5" xmlns:oval-def="http://oval.mitre.org/XMLSchema/oval-definitions-5" xmlns:xccdf-1.2="http://checklists.nist.gov/xccdf/1.2" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="scap_org.open-scap_collection_from_xccdf_ssg-losant-xccdf.xml" schematron-version="1.3">
+  <ds:data-stream id="scap_org.open-scap_datastream_from_xccdf_ssg-losant-xccdf.xml" scap-version="1.3" use-case="OTHER" timestamp="2026-07-10T18:45:38">
+    <ds:dictionaries>
+      <ds:component-ref id="scap_org.open-scap_cref_ssg-losant-cpe-dictionary.xml" xlink:href="#scap_org.open-scap_comp_ssg-losant-cpe-dictionary.xml">
+        <cat:catalog>
+          <cat:uri name="ssg-losant-cpe-oval.xml" uri="#scap_org.open-scap_cref_ssg-losant-cpe-oval.xml"/>
+        </cat:catalog>
+      </ds:component-ref>
+    </ds:dictionaries>
+    <ds:checklists>
+      <ds:component-ref id="scap_org.open-scap_cref_ssg-losant-xccdf.xml" xlink:href="#scap_org.open-scap_comp_ssg-losant-xccdf.xml">
+        <cat:catalog>
+          <cat:uri name="ssg-losant-oval.xml" uri="#scap_org.open-scap_cref_ssg-losant-oval.xml"/>
+          <cat:uri name="ssg-losant-ocil.xml" uri="#scap_org.open-scap_cref_ssg-losant-ocil.xml"/>
+          <cat:uri name="ssg-losant-cpe-oval.xml" uri="#scap_org.open-scap_cref_ssg-losant-cpe-oval.xml"/>
+        </cat:catalog>
+      </ds:component-ref>
+    </ds:checklists>
+    <ds:checks>
+      <ds:component-ref id="scap_org.open-scap_cref_ssg-losant-oval.xml" xlink:href="#scap_org.open-scap_comp_ssg-losant-oval.xml"/>
+      <ds:component-ref id="scap_org.open-scap_cref_ssg-losant-ocil.xml" xlink:href="#scap_org.open-scap_comp_ssg-losant-ocil.xml"/>
+      <ds:component-ref id="scap_org.open-scap_cref_ssg-losant-cpe-oval.xml" xlink:href="#scap_org.open-scap_comp_ssg-losant-cpe-oval.xml"/>
+    </ds:checks>
+  </ds:data-stream>
+  <ds:component id="scap_org.open-scap_comp_ssg-losant-cpe-dictionary.xml" timestamp="2026-07-10T18:45:38">
+    <cpe-dict:cpe-list xsi:schemaLocation="http://cpe.mitre.org/dictionary/2.0 http://cpe.mitre.org/files/cpe-dictionary_2.1.xsd">
+      <cpe-dict:cpe-item name="cpe:2.3:a:suse:losant:1.0:*:*:*:*:*:*:*">
+        <cpe-dict:title xml:lang="en-us">SUSE Losant 1.0</cpe-dict:title>
+        <cpe-dict:check system="http://oval.mitre.org/XMLSchema/oval-definitions-5" href="ssg-losant-cpe-oval.xml">oval:ssg-installed_app_is_losant:def:1</cpe-dict:check>
+      </cpe-dict:cpe-item>
+    </cpe-dict:cpe-list>
+  </ds:component>
+  <ds:component id="scap_org.open-scap_comp_ssg-losant-xccdf.xml" timestamp="2026-07-10T18:45:38">
+    <xccdf-1.2:Benchmark id="xccdf_org.ssgproject.content_benchmark_LOSANT-1.0" xsi:schemaLocation="http://checklists.nist.gov/xccdf/1.2 xccdf-1.2.xsd" style="SCAP_1.2" resolved="true" xml:lang="en-US">
+      <xccdf-1.2:status date="2026-07-10">draft</xccdf-1.2:status>
+      <xccdf-1.2:title>Guide to the Secure Configuration of SUSE Industrial Edge 1.x</xccdf-1.2:title>
+      <xccdf-1.2:description>This guide provides security configuration guidance for SUSE Industrial Edge.</xccdf-1.2:description>
+      <xccdf-1.2:notice id="terms_of_use">Test all settings in a non-production environment before applying them.</xccdf-1.2:notice>
+      <xccdf-1.2:front-matter/>
+      <xccdf-1.2:rear-matter/>
+      <xccdf-1.2:reference href="https://cyber.gouv.fr/sites/default/files/document/linux_configuration-en-v2.pdf">anssi</xccdf-1.2:reference>
+      <xccdf-1.2:reference href="https://www.cyber.mil/stigs/downloads/?_dl_facet_stigs=application-servers">app-srg</xccdf-1.2:reference>
+      <xccdf-1.2:reference href="https://www.cyber.mil/stigs/downloads/?_dl_facet_stigs=app-security">app-srg-ctr</xccdf-1.2:reference>
+      <xccdf-1.2:reference href="https://www.bsi.bund.de/SharedDocs/Downloads/EN/BSI/Grundschutz/International/bsi_it_gs_comp_2022.pdf">bsi</xccdf-1.2:reference>
+      <xccdf-1.2:reference href="https://www.cisecurity.org/benchmark/kubernetes/">cis</xccdf-1.2:reference>
+      <xccdf-1.2:reference href="https://www.cisecurity.org/controls/">cis-csc</xccdf-1.2:reference>
+      <xccdf-1.2:reference href="https://www.fbi.gov/file-repository/cjis-security-policy-v5_5_20160601-2-1.pdf">cjis</xccdf-1.2:reference>
+      <xccdf-1.2:reference href="https://www.isaca.org/resources/cobit">cobit5</xccdf-1.2:reference>
+      <xccdf-1.2:reference href="http://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-171.pdf">cui</xccdf-1.2:reference>
+      <xccdf-1.2:reference href="not_officially_available">dcid</xccdf-1.2:reference>
+      <xccdf-1.2:reference href="https://www.cyber.mil/stigs/cci/">disa</xccdf-1.2:reference>
+      <xccdf-1.2:reference href="https://www.gpo.gov/fdsys/pkg/CFR-2007-title45-vol1/pdf/CFR-2007-title45-vol1-chapA-subchapC.pdf">hipaa</xccdf-1.2:reference>
+      <xccdf-1.2:reference href="https://www.isa.org/products/isa-62443-2-1-2009-security-for-industrial-automat">isa-62443-2009</xccdf-1.2:reference>
+      <xccdf-1.2:reference href="https://www.isa.org/products/ansi-isa-62443-3-3-99-03-03-2013-security-for-indu">isa-62443-2013</xccdf-1.2:reference>
+      <xccdf-1.2:reference href="https://www.cyber.gov.au/acsc/view-all-content/ism">ism</xccdf-1.2:reference>
+      <xccdf-1.2:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">iso27001-2013</xccdf-1.2:reference>
+      <xccdf-1.2:reference href="https://www.nerc.com/standards/reliability-standards/cip">nerc-cip</xccdf-1.2:reference>
+      <xccdf-1.2:reference href="http://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-53r4.pdf">nist</xccdf-1.2:reference>
+      <xccdf-1.2:reference href="https://nvlpubs.nist.gov/nistpubs/CSWP/NIST.CSWP.04162018.pdf">nist-csf</xccdf-1.2:reference>
+      <xccdf-1.2:reference href="https://www.cyber.mil/stigs/downloads/?_dl_facet_stigs=operating-systems%2Cgeneral-purpose-os">os-srg</xccdf-1.2:reference>
+      <xccdf-1.2:reference href="https://www.niap-ccevs.org/Profile/PP.cfm">ospp</xccdf-1.2:reference>
+      <xccdf-1.2:reference href="https://www.pcisecuritystandards.org/documents/PCI_DSS_v3-2-1.pdf">pcidss</xccdf-1.2:reference>
+      <xccdf-1.2:reference href="https://docs-prv.pcisecuritystandards.org/PCI%20DSS/Standard/PCI-DSS-v4_0.pdf">pcidss4</xccdf-1.2:reference>
+      <xccdf-1.2:reference href="https://www.cyber.mil/stigs/downloads/?_dl_facet_stigs=operating-systems%2Cunix-linux">stigid</xccdf-1.2:reference>
+      <xccdf-1.2:reference href="https://www.cyber.mil/stigs/srg-stig-tools/">stigref</xccdf-1.2:reference>
+      <cpe-lang:platform-specification>
+        <cpe-lang:platform id="losant">
+          <cpe-lang:logical-test operator="AND" negate="false">
+            <cpe-lang:check-fact-ref system="http://oval.mitre.org/XMLSchema/oval-definitions-5" href="ssg-losant-cpe-oval.xml" id-ref="oval:ssg-installed_app_is_losant:def:1"/>
+          </cpe-lang:logical-test>
+        </cpe-lang:platform>
+      </cpe-lang:platform-specification>
+      <xccdf-1.2:platform idref="cpe:2.3:a:suse:losant:1.0:*:*:*:*:*:*:*"/>
+      <xccdf-1.2:version update="https://github.com/ComplianceAsCode/content/releases/latest">0.1.81</xccdf-1.2:version>
+      <xccdf-1.2:metadata>
+        <dc:publisher>SCAP Security Guide Project</dc:publisher>
+        <dc:creator>SCAP Security Guide Project</dc:creator>
+        <dc:contributor>Frank J Cameron (CAM1244) &lt;cameron@ctc.com&gt;</dc:contributor>
+        <dc:contributor>0x66656c6978 &lt;0x66656c6978@users.noreply.github.com&gt;</dc:contributor>
+        <dc:contributor>Håvard F. Aasen &lt;havard.f.aasen@pfft.no&gt;</dc:contributor>
+        <dc:contributor>Armando Acosta &lt;armando.acosta@oracle.com&gt;</dc:contributor>
+        <dc:contributor>Jack Adolph &lt;jack.adolph@gmail.com&gt;</dc:contributor>
+        <dc:contributor>Edgar Aguilar &lt;edgar.aguilar@oracle.com&gt;</dc:contributor>
+        <dc:contributor>akuster &lt;akuster808@gmail.com&gt;</dc:contributor>
+        <dc:contributor>Gabe Alford &lt;redhatrises@gmail.com&gt;</dc:contributor>
+        <dc:contributor>Firas AlShafei &lt;firas.alshafei@us.abb.com&gt;</dc:contributor>
+        <dc:contributor>Rodrigo Alvares &lt;ralvares@redhat.com&gt;</dc:contributor>
+        <dc:contributor>am-tux &lt;andrew.miller11@gmail.com&gt;</dc:contributor>
+        <dc:contributor>Christopher Anderson &lt;cba@fedoraproject.org&gt;</dc:contributor>
+        <dc:contributor>Craig Andrews &lt;candrews@integralblue.com&gt;</dc:contributor>
+        <dc:contributor>angystardust &lt;angystardust@users.noreply.github.com&gt;</dc:contributor>
+        <dc:contributor>anivan-suse &lt;anastasija.ivanovic@suse.com&gt;</dc:contributor>
+        <dc:contributor>anixon-rh &lt;55244503+anixon-rh@users.noreply.github.com&gt;</dc:contributor>
+        <dc:contributor>Anna-Koudelkova &lt;akoudelk@redhat.com&gt;</dc:contributor>
+        <dc:contributor>Arden97 &lt;arden2545@gmail.com&gt;</dc:contributor>
+        <dc:contributor>Steve Arnold &lt;sarnold@vctlabs.com&gt;</dc:contributor>
+        <dc:contributor>Ikko Ashimine &lt;eltociear@gmail.com&gt;</dc:contributor>
+        <dc:contributor>Chuck Atkins &lt;chuck.atkins@kitware.com&gt;</dc:contributor>
+        <dc:contributor>axuan &lt;axuan@redhat.com&gt;</dc:contributor>
+        <dc:contributor>Bharath B &lt;bhb@redhat.com&gt;</dc:contributor>
+        <dc:contributor>Ryan Ballanger &lt;root@rballang-admin-2.fastenal.com&gt;</dc:contributor>
+        <dc:contributor>Alex Baranowski &lt;alex@euro-linux.com&gt;</dc:contributor>
+        <dc:contributor>Eduardo Barretto &lt;eduardo.barretto@canonical.com&gt;</dc:contributor>
+        <dc:contributor>Paul Bastide &lt;pbastide@us.ibm.com&gt;</dc:contributor>
+        <dc:contributor>Molly Jo Bault &lt;Molly.Jo.Bault@ballardtech.com&gt;</dc:contributor>
+        <dc:contributor>Andrew Becker &lt;A-Beck@users.noreply.github.com&gt;</dc:contributor>
+        <dc:contributor>Gabriel Becker &lt;ggasparb@redhat.com&gt;</dc:contributor>
+        <dc:contributor>BenGui &lt;benoit.guillon1@etu.unilim.fr&gt;</dc:contributor>
+        <dc:contributor>Alexander Bergmann &lt;abergmann@suse.com&gt;</dc:contributor>
+        <dc:contributor>Eric Berry &lt;eric@approvedworkman.com&gt;</dc:contributor>
+        <dc:contributor>Dale Bewley &lt;dale@bewley.net&gt;</dc:contributor>
+        <dc:contributor>Jose Luis BG &lt;bgjoseluis@gmail.com&gt;</dc:contributor>
+        <dc:contributor>binyanling &lt;binyanling@uniontech.com&gt;</dc:contributor>
+        <dc:contributor>Joseph Bisch &lt;joseph.bisch@gmail.com&gt;</dc:contributor>
+        <dc:contributor>Jeff Blank &lt;blank@eclipse.ncsc.mil&gt;</dc:contributor>
+        <dc:contributor>Olivier Bonhomme &lt;ptitoliv@ptitoliv.net&gt;</dc:contributor>
+        <dc:contributor>bontreger &lt;bontreger@users.noreply.github.com&gt;</dc:contributor>
+        <dc:contributor>Lance Bragstad &lt;lbragstad@gmail.com&gt;</dc:contributor>
+        <dc:contributor>Ted Brunell &lt;tbrunell@redhat.com&gt;</dc:contributor>
+        <dc:contributor>Marcus Burghardt &lt;maburgha@redhat.com&gt;</dc:contributor>
+        <dc:contributor>Matthew Burket &lt;mburket@redhat.com&gt;</dc:contributor>
+        <dc:contributor>Blake Burkhart &lt;blake.burkhart@us.af.mil&gt;</dc:contributor>
+        <dc:contributor>Patrick Callahan &lt;pmc@patrickcallahan.com&gt;</dc:contributor>
+        <dc:contributor>George Campbell &lt;gcampbell@palantir.com&gt;</dc:contributor>
+        <dc:contributor>Nick Carboni &lt;ncarboni@redhat.com&gt;</dc:contributor>
+        <dc:contributor>Carlos &lt;64919342+carlosmmatos@users.noreply.github.com&gt;</dc:contributor>
+        <dc:contributor>James Cassell &lt;james.cassell@ll.mit.edu&gt;</dc:contributor>
+        <dc:contributor>Frank Caviggia &lt;fcaviggia@users.noreply.github.com&gt;</dc:contributor>
+        <dc:contributor>Sinong Chen &lt;costinchen@tencent.com&gt;</dc:contributor>
+        <dc:contributor>Eric Christensen &lt;echriste@redhat.com&gt;</dc:contributor>
+        <dc:contributor>Dan Clark &lt;danclark@redhat.com&gt;</dc:contributor>
+        <dc:contributor>Jayson Cofell &lt;1051437+70k10@users.noreply.github.com&gt;</dc:contributor>
+        <dc:contributor>David du Colombier &lt;djc@datadoghq.com&gt;</dc:contributor>
+        <dc:contributor>Commandcracker &lt;lukas.fricke.dev@gmail.com&gt;</dc:contributor>
+        <dc:contributor>Caleb Cooper &lt;coopercd@ornl.gov&gt;</dc:contributor>
+        <dc:contributor>CoreyCook8 &lt;129206271+CoreyCook8@users.noreply.github.com&gt;</dc:contributor>
+        <dc:contributor>cortesana &lt;acortes@redhat.com&gt;</dc:contributor>
+        <dc:contributor>Richard Maciel Costa &lt;richard.maciel.costa@canonical.com&gt;</dc:contributor>
+        <dc:contributor>Xavier Coulon &lt;xavier.coulon@suse.com&gt;</dc:contributor>
+        <dc:contributor>Deric Crago &lt;deric.crago@gmail.com&gt;</dc:contributor>
+        <dc:contributor>crleekwc &lt;crleekwc@gmail.com&gt;</dc:contributor>
+        <dc:contributor>cueball23 &lt;christoph.alms@westnetz.de&gt;</dc:contributor>
+        <dc:contributor>cyarbrough76 &lt;42849651+cyarbrough76@users.noreply.github.com&gt;</dc:contributor>
+        <dc:contributor>Maura Dailey &lt;maura@eclipse.ncsc.mil&gt;</dc:contributor>
+        <dc:contributor>Benjamin Deering &lt;ben_deering@jeepingben.net&gt;</dc:contributor>
+        <dc:contributor>Shane Dell &lt;shanedell100@gmail.com&gt;</dc:contributor>
+        <dc:contributor>Klaas Demter &lt;demter@atix.de&gt;</dc:contributor>
+        <dc:contributor>denknorr &lt;dennis.knorr@suse.com&gt;</dc:contributor>
+        <dc:contributor>dhanushkar-wso2 &lt;dhanushkar@wso2.com&gt;</dc:contributor>
+        <dc:contributor>Andrew DiPrinzio &lt;andrew.diprinzio@jhuapl.edu&gt;</dc:contributor>
+        <dc:contributor>dom &lt;dominique.blaze@devinci.fr&gt;</dc:contributor>
+        <dc:contributor>Jean-Baptiste Donnette &lt;jean-baptiste.donnette@epita.fr&gt;</dc:contributor>
+        <dc:contributor>Marco De Donno &lt;mdedonno1337@gmail.com&gt;</dc:contributor>
+        <dc:contributor>dperrone &lt;dperrone@redhat.com&gt;</dc:contributor>
+        <dc:contributor>drax &lt;applezip@gmail.com&gt;</dc:contributor>
+        <dc:contributor>Qingmin Duanmu &lt;qduanmu@redhat.com&gt;</dc:contributor>
+        <dc:contributor>Sebastian Dunne &lt;sdunne@redhat.com&gt;</dc:contributor>
+        <dc:contributor>François Duthilleul &lt;francoisduthilleul@gmail.com&gt;</dc:contributor>
+        <dc:contributor>Greg Elin &lt;gregelin@gitmachines.com&gt;</dc:contributor>
+        <dc:contributor>eradot4027 &lt;jrtonmac@gmail.com&gt;</dc:contributor>
+        <dc:contributor>ericeberry &lt;ericeberry@gmail.com&gt;</dc:contributor>
+        <dc:contributor>ermeratos &lt;manuel.ermer@eviden.net&gt;</dc:contributor>
+        <dc:contributor>Evelyn &lt;evansvevelyn@gmail.com&gt;</dc:contributor>
+        <dc:contributor>Alexis Facques &lt;alexis.facques@mythalesgroup.io&gt;</dc:contributor>
+        <dc:contributor>Jan Fader &lt;jan.fader@web.de&gt;</dc:contributor>
+        <dc:contributor>felixmarch &lt;felixmarch@users.noreply.github.com&gt;</dc:contributor>
+        <dc:contributor>Asser Schrøder Femø &lt;asser@asser.org&gt;</dc:contributor>
+        <dc:contributor>Henry Finucane &lt;hfinucane@zscaler.com&gt;</dc:contributor>
+        <dc:contributor>Leah Fisher &lt;lfisher047@gmail.com&gt;</dc:contributor>
+        <dc:contributor>Marco Fortina &lt;marco_fortina@hotmail.it&gt;</dc:contributor>
+        <dc:contributor>Yavor Georgiev &lt;strandjata@gmail.com&gt;</dc:contributor>
+        <dc:contributor>Alijohn Ghassemlouei &lt;alijohn@secureagc.com&gt;</dc:contributor>
+        <dc:contributor>Swarup Ghosh &lt;swghosh@redhat.com&gt;</dc:contributor>
+        <dc:contributor>ghylock &lt;ghylock@gmail.com&gt;</dc:contributor>
+        <dc:contributor>Andrew Gilmore &lt;agilmore2@gmail.com&gt;</dc:contributor>
+        <dc:contributor>Joshua Glemza &lt;jglemza@nasa.gov&gt;</dc:contributor>
+        <dc:contributor>Nick Gompper &lt;forestgomp@yahoo.com&gt;</dc:contributor>
+        <dc:contributor>David Fernandez Gonzalez &lt;david.fernandezgonzalez@canonical.com&gt;</dc:contributor>
+        <dc:contributor>Loren Gordon &lt;lorengordon@users.noreply.github.com&gt;</dc:contributor>
+        <dc:contributor>Gene Gotimer &lt;otherdevopsgene@portinfo.com&gt;</dc:contributor>
+        <dc:contributor>Patrik Greco &lt;sikevux@sikevux.se&gt;</dc:contributor>
+        <dc:contributor>Steve Grubb &lt;sgrubb@redhat.com&gt;</dc:contributor>
+        <dc:contributor>guangyee &lt;gyee@suse.com&gt;</dc:contributor>
+        <dc:contributor>Bhargavi Gudi &lt;bgudi@bgudi-thinkpadt14sgen2i.remote.csb&gt;</dc:contributor>
+        <dc:contributor>Christian Hagenest &lt;christian.hagenest@suse.com&gt;</dc:contributor>
+        <dc:contributor>Marek Haicman &lt;mhaicman@redhat.com&gt;</dc:contributor>
+        <dc:contributor>Sun, Haoxiang &lt;haoxiang.sun@intel.com&gt;</dc:contributor>
+        <dc:contributor>Vern Hart &lt;vern.hart@canonical.com&gt;</dc:contributor>
+        <dc:contributor>Alex Haydock &lt;alex@alexhaydock.co.uk&gt;</dc:contributor>
+        <dc:contributor>Rebekah Hayes &lt;rhayes@corp.rivierautilities.com&gt;</dc:contributor>
+        <dc:contributor>hazerre &lt;kotadouglas2@gmail.com&gt;</dc:contributor>
+        <dc:contributor>Trey Henefield &lt;thenefield@gmail.com&gt;</dc:contributor>
+        <dc:contributor>Henning Henkel &lt;henning.henkel@helvetia.ch&gt;</dc:contributor>
+        <dc:contributor>hex2a &lt;hex2a@users.noreply.github.com&gt;</dc:contributor>
+        <dc:contributor>hipponix &lt;mirco.santori@gmail.com&gt;</dc:contributor>
+        <dc:contributor>John Hooks &lt;jhooks@starscream.pa.jhbcomputers.com&gt;</dc:contributor>
+        <dc:contributor>Jakub Hrozek &lt;jhrozek@redhat.com&gt;</dc:contributor>
+        <dc:contributor>Donald Hunter &lt;donald.hunter@gmail.com&gt;</dc:contributor>
+        <dc:contributor>De Huo &lt;De.Huo@windriver.com&gt;</dc:contributor>
+        <dc:contributor>Robin Price II &lt;robin@redhat.com&gt;</dc:contributor>
+        <dc:contributor>Yasir Imam &lt;yimam@redhat.com&gt;</dc:contributor>
+        <dc:contributor>Jiri Jaburek &lt;jjaburek@redhat.com&gt;</dc:contributor>
+        <dc:contributor>Keith Jackson &lt;keithkjackson@gmail.com&gt;</dc:contributor>
+        <dc:contributor>Marc Jadoul &lt;mgjadoul@laptomatic.auth-o-matic.corp&gt;</dc:contributor>
+        <dc:contributor>Jeremiah Jahn &lt;jeremiah@goodinassociates.com&gt;</dc:contributor>
+        <dc:contributor>Jakub Jelen &lt;jjelen@redhat.com&gt;</dc:contributor>
+        <dc:contributor>Jessicahfy &lt;Jessicahfy@users.noreply.github.com&gt;</dc:contributor>
+        <dc:contributor>Stephan Joerrens &lt;Stephan.Joerrens@fiduciagad.de&gt;</dc:contributor>
+        <dc:contributor>Simon John &lt;sjohn@tuxcare.com&gt;</dc:contributor>
+        <dc:contributor>Hunter Jones &lt;hjones2199@gmail.com&gt;</dc:contributor>
+        <dc:contributor>Jono &lt;jono@ubuntu-18.localdomain&gt;</dc:contributor>
+        <dc:contributor>julius.ish &lt;julius.ish@zetier.com&gt;</dc:contributor>
+        <dc:contributor>justchris1 &lt;justchris1@justchris1.email&gt;</dc:contributor>
+        <dc:contributor>Kacper &lt;kacper@kacper.se&gt;</dc:contributor>
+        <dc:contributor>Kai Kang &lt;kai.kang@windriver.com&gt;</dc:contributor>
+        <dc:contributor>Charles Kernstock &lt;charles.kernstock@ultra-ats.com&gt;</dc:contributor>
+        <dc:contributor>Yuli Khodorkovskiy &lt;ykhodorkovskiy@tresys.com&gt;</dc:contributor>
+        <dc:contributor>Sherine Khoury &lt;skhoury@redhat.com&gt;</dc:contributor>
+        <dc:contributor>Nathan Kinder &lt;nkinder@redhat.com&gt;</dc:contributor>
+        <dc:contributor>Lee Kinser &lt;lee.kinser@gmail.com&gt;</dc:contributor>
+        <dc:contributor>Evgeny Kolesnikov &lt;ekolesni@redhat.com&gt;</dc:contributor>
+        <dc:contributor>Peter 'Pessoft' Kolínek &lt;github@pessoft.com&gt;</dc:contributor>
+        <dc:contributor>Luke Kordell &lt;luke.t.kordell@lmco.com&gt;</dc:contributor>
+        <dc:contributor>Malte Kraus &lt;malte.kraus@suse.com&gt;</dc:contributor>
+        <dc:contributor>Seth Kress &lt;seth.kress@dsainc.com&gt;</dc:contributor>
+        <dc:contributor>Felix Krohn &lt;felix.krohn@helvetia.ch&gt;</dc:contributor>
+        <dc:contributor>kspargur &lt;kspargur@kspargur.csb&gt;</dc:contributor>
+        <dc:contributor>Amit Kumar &lt;amitkuma@redhat.com&gt;</dc:contributor>
+        <dc:contributor>Fen Labalme &lt;fen@civicactions.com&gt;</dc:contributor>
+        <dc:contributor>Dexter Le &lt;dexter.le@sap.com&gt;</dc:contributor>
+        <dc:contributor>Dimitri John Ledkov &lt;dimitri.ledkov@surgut.co.uk&gt;</dc:contributor>
+        <dc:contributor>Ade Lee &lt;alee@redhat.com&gt;</dc:contributor>
+        <dc:contributor>Christopher Lee &lt;Crleekwc@gmail.com&gt;</dc:contributor>
+        <dc:contributor>Ian Lee &lt;lee1001@llnl.gov&gt;</dc:contributor>
+        <dc:contributor>Jarrett Lee &lt;jarrettl@umd.edu&gt;</dc:contributor>
+        <dc:contributor>Joseph Lenox &lt;joseph.lenox@collins.com&gt;</dc:contributor>
+        <dc:contributor>Stefano Libero &lt;stefano.libero@nozominetworks.com&gt;</dc:contributor>
+        <dc:contributor>lichtblaugue &lt;guenther.lichtblau@eviden.com&gt;</dc:contributor>
+        <dc:contributor>Jan Lieskovsky &lt;jlieskov@redhat.com&gt;</dc:contributor>
+        <dc:contributor>Markus Linnala &lt;Markus.Linnala@knowit.fi&gt;</dc:contributor>
+        <dc:contributor>Flos Lonicerae &lt;lonicerae@gmail.com&gt;</dc:contributor>
+        <dc:contributor>Simon Lukasik &lt;slukasik@redhat.com&gt;</dc:contributor>
+        <dc:contributor>Andrew Lukoshko &lt;andrew.lukoshko@gmail.com&gt;</dc:contributor>
+        <dc:contributor>Milan Lysonek &lt;mlysonek@redhat.com&gt;</dc:contributor>
+        <dc:contributor>Fredrik Lysén &lt;fredrik@pipemore.se&gt;</dc:contributor>
+        <dc:contributor>Mackemania &lt;8738793+Mackemania@users.noreply.github.com&gt;</dc:contributor>
+        <dc:contributor>Caitlin Macleod &lt;caitelatte@gmail.com&gt;</dc:contributor>
+        <dc:contributor>Dmitry Makovey &lt;dmakovey@yahoo.com&gt;</dc:contributor>
+        <dc:contributor>Nick Maludy &lt;nmaludy@gmail.com&gt;</dc:contributor>
+        <dc:contributor>Lokesh Mandvekar &lt;lsm5@fedoraproject.org&gt;</dc:contributor>
+        <dc:contributor>Matus Marhefka &lt;mmarhefk@redhat.com&gt;</dc:contributor>
+        <dc:contributor>Jamie Lorwey Martin &lt;jlmartin@redhat.com&gt;</dc:contributor>
+        <dc:contributor>Carlos Matos &lt;cmatos@redhat.com&gt;</dc:contributor>
+        <dc:contributor>Robert McAllister &lt;rmcallis@redhat.com&gt;</dc:contributor>
+        <dc:contributor>Karen McCarron &lt;kmccarro@redhat.com&gt;</dc:contributor>
+        <dc:contributor>Michael McConachie &lt;michael@redhat.com&gt;</dc:contributor>
+        <dc:contributor>Marcus Meissner &lt;meissner@suse.de&gt;</dc:contributor>
+        <dc:contributor>Khary Mendez &lt;kmendez@redhat.com&gt;</dc:contributor>
+        <dc:contributor>Rodney Mercer &lt;rmercer@harris.com&gt;</dc:contributor>
+        <dc:contributor>Matt Micene &lt;nzwulfin@gmail.com&gt;</dc:contributor>
+        <dc:contributor>Brian Millett &lt;bmillett@gmail.com&gt;</dc:contributor>
+        <dc:contributor>Takuya Mishina &lt;tmishina@jp.ibm.com&gt;</dc:contributor>
+        <dc:contributor>Mixer9 &lt;35545791+Mixer9@users.noreply.github.com&gt;</dc:contributor>
+        <dc:contributor>mmosel &lt;mmosel@kde.example.com&gt;</dc:contributor>
+        <dc:contributor>Thomas Montague &lt;montague.thomas@gmail.com&gt;</dc:contributor>
+        <dc:contributor>Alan Moore &lt;alan.moore@canonical.com&gt;</dc:contributor>
+        <dc:contributor>Zbynek Moravec &lt;zmoravec@redhat.com&gt;</dc:contributor>
+        <dc:contributor>Kazuo Moriwaka &lt;moriwaka@users.noreply.github.com&gt;</dc:contributor>
+        <dc:contributor>Michael Moseley &lt;michael@eclipse.ncsc.mil&gt;</dc:contributor>
+        <dc:contributor>Nathan Moyer &lt;nmoyer@spectric.com&gt;</dc:contributor>
+        <dc:contributor>Ross Murphy &lt;RossMurphy@ibm.com&gt;</dc:contributor>
+        <dc:contributor>Renaud Métrich &lt;rmetrich@redhat.com&gt;</dc:contributor>
+        <dc:contributor>Joe Nall &lt;joe@nall.com&gt;</dc:contributor>
+        <dc:contributor>namoyer10 &lt;48189779+namoyer10@users.noreply.github.com&gt;</dc:contributor>
+        <dc:contributor>Neiloy &lt;neiloy@redhat.com&gt;</dc:contributor>
+        <dc:contributor>Axel Nennker &lt;axel@nennker.de&gt;</dc:contributor>
+        <dc:contributor>Michele Newman &lt;mnewman@redhat.com&gt;</dc:contributor>
+        <dc:contributor>nnerdmann &lt;128606223+nnerdmann@users.noreply.github.com&gt;</dc:contributor>
+        <dc:contributor>Sean O'Keeffe &lt;seanokeeffe797@gmail.com&gt;</dc:contributor>
+        <dc:contributor>Jiri Odehnal &lt;jodehnal@redhat.com&gt;</dc:contributor>
+        <dc:contributor>Ilya Okomin &lt;ilya.okomin@oracle.com&gt;</dc:contributor>
+        <dc:contributor>Kaustubh Padegaonkar &lt;theTuxRacer@gmail.com&gt;</dc:contributor>
+        <dc:contributor>Michael Palmiotto &lt;mpalmiotto@tresys.com&gt;</dc:contributor>
+        <dc:contributor>Eryx Paredes &lt;eryxp@lyft.com&gt;</dc:contributor>
+        <dc:contributor>Max R.D. Parmer &lt;maxp@trystero.is&gt;</dc:contributor>
+        <dc:contributor>Arnaud Patard &lt;apatard@hupstream.com&gt;</dc:contributor>
+        <dc:contributor>Jan Pazdziora &lt;jpazdziora@redhat.com&gt;</dc:contributor>
+        <dc:contributor>pcactr &lt;paul.c.arnold4.ctr@mail.mil&gt;</dc:contributor>
+        <dc:contributor>Kenneth Peeples &lt;kennethwpeeples@gmail.com&gt;</dc:contributor>
+        <dc:contributor>Nathan Peters &lt;Nathaniel.Peters@ca.com&gt;</dc:contributor>
+        <dc:contributor>Frank Lin PIAT &lt;fpiat@klabs.be&gt;</dc:contributor>
+        <dc:contributor>Stefan Pietsch &lt;mail.ipv4v6+gh@gmail.com&gt;</dc:contributor>
+        <dc:contributor>piggyvenus &lt;piggyvenus@gmail.com&gt;</dc:contributor>
+        <dc:contributor>Vojtech Polasek &lt;vpolasek@redhat.com&gt;</dc:contributor>
+        <dc:contributor>Orion Poplawski &lt;orion@nwra.com&gt;</dc:contributor>
+        <dc:contributor>Jennifer Power &lt;barnabei.jennifer@gmail.com&gt;</dc:contributor>
+        <dc:contributor>Nick Poyant &lt;npoyant@redhat.com&gt;</dc:contributor>
+        <dc:contributor>Martin Preisler &lt;mpreisle@redhat.com&gt;</dc:contributor>
+        <dc:contributor>Wesley Ceraso Prudencio &lt;wcerasop@redhat.com&gt;</dc:contributor>
+        <dc:contributor>Raphael Sanchez Prudencio &lt;rsprudencio@redhat.com&gt;</dc:contributor>
+        <dc:contributor>Miha Purg &lt;miha.purg@canonical.com&gt;</dc:contributor>
+        <dc:contributor>T.O. Radzy Radzykewycz &lt;radzy@windriver.com&gt;</dc:contributor>
+        <dc:contributor>rain-Qing &lt;yangyuqing6@qq.com&gt;</dc:contributor>
+        <dc:contributor>Kenyon Ralph &lt;kenyon@kenyonralph.com&gt;</dc:contributor>
+        <dc:contributor>Mike Ralph &lt;mralph@redhat.com&gt;</dc:contributor>
+        <dc:contributor>Federico Ramirez &lt;federico.r.ramirez@oracle.com&gt;</dc:contributor>
+        <dc:contributor>rchikov &lt;rumen.chikov@suse.com&gt;</dc:contributor>
+        <dc:contributor>Rick Renshaw &lt;Richard_Renshaw@xtoenergy.com&gt;</dc:contributor>
+        <dc:contributor>Paul Rensing &lt;prensing@cimetrics.com&gt;</dc:contributor>
+        <dc:contributor>Chris Reynolds &lt;c.reynolds82@gmail.com&gt;</dc:contributor>
+        <dc:contributor>rhayes &lt;rhayes@rivierautilities.com&gt;</dc:contributor>
+        <dc:contributor>Pat Riehecky &lt;riehecky@fnal.gov&gt;</dc:contributor>
+        <dc:contributor>rlucente-se-jboss &lt;rlucente@redhat.com&gt;</dc:contributor>
+        <dc:contributor>Juan Antonio Osorio Robles &lt;juan.osoriorobles@eu.equinix.com&gt;</dc:contributor>
+        <dc:contributor>Paul Roche &lt;paul.roche@menlosecurity.com&gt;</dc:contributor>
+        <dc:contributor>Jan Rodak &lt;hony.com@seznam.cz&gt;</dc:contributor>
+        <dc:contributor>Matt Rogers &lt;mrogers@redhat.com&gt;</dc:contributor>
+        <dc:contributor>Jesse Roland &lt;jesse.roland@onyxpoint.com&gt;</dc:contributor>
+        <dc:contributor>Joshua Roys &lt;roysjosh@gmail.com&gt;</dc:contributor>
+        <dc:contributor>rrenshaw &lt;bofh69@yahoo.com&gt;</dc:contributor>
+        <dc:contributor>Daniel Ruf &lt;daniel@daniel-ruf.de&gt;</dc:contributor>
+        <dc:contributor>Chris Ruffalo &lt;chris.ruffalo@gmail.com&gt;</dc:contributor>
+        <dc:contributor>Benjamin Ruland &lt;benjamin.ruland@gmail.com&gt;</dc:contributor>
+        <dc:contributor>rumch-se &lt;77793453+rumch-se@users.noreply.github.com&gt;</dc:contributor>
+        <dc:contributor>Rutvik &lt;rutksh@gmail.com&gt;</dc:contributor>
+        <dc:contributor>Ray Shaw (Cont ARL/CISD) rvshaw &lt;rvshaw@esme.arl.army.mil&gt;</dc:contributor>
+        <dc:contributor>Nicolas SAID &lt;nicolas.said@atos.net&gt;</dc:contributor>
+        <dc:contributor>Earl Sampson &lt;ESampson@suse.com&gt;</dc:contributor>
+        <dc:contributor>sampsone &lt;esampson@suse.com&gt;</dc:contributor>
+        <dc:contributor>Mirco Santori &lt;mirco.santori@roche.com&gt;</dc:contributor>
+        <dc:contributor>Willy Santos &lt;wsantos@redhat.com&gt;</dc:contributor>
+        <dc:contributor>Nagarjuna Sarvepalli &lt;snagarju@redhat.com&gt;</dc:contributor>
+        <dc:contributor>Anderson Sasaki &lt;33833274+ansasaki@users.noreply.github.com&gt;</dc:contributor>
+        <dc:contributor>Gautam Satish &lt;gautams@hpe.com&gt;</dc:contributor>
+        <dc:contributor>Watson Sato &lt;wsato@redhat.com&gt;</dc:contributor>
+        <dc:contributor>Satoru SATOH &lt;satoru.satoh@gmail.com&gt;</dc:contributor>
+        <dc:contributor>Alexander Scheel &lt;alexander.m.scheel@gmail.com&gt;</dc:contributor>
+        <dc:contributor>Bryan Schneiders &lt;pschneiders@trisept.com&gt;</dc:contributor>
+        <dc:contributor>Robert Schweikert &lt;rjschwei@suse.com&gt;</dc:contributor>
+        <dc:contributor>shaneboulden &lt;shane.boulden@gmail.com&gt;</dc:contributor>
+        <dc:contributor>Vincent Shen &lt;wenshen@redhat.com&gt;</dc:contributor>
+        <dc:contributor>Dhriti Shikhar &lt;dhriti.shikhar.rokz@gmail.com&gt;</dc:contributor>
+        <dc:contributor>Spencer Shimko &lt;sshimko@tresys.com&gt;</dc:contributor>
+        <dc:contributor>Mark Shoger &lt;mshoger@redhat.com&gt;</dc:contributor>
+        <dc:contributor>Shane Siebken &lt;shane.siebken@capellaspace.com&gt;</dc:contributor>
+        <dc:contributor>THOBY Simon &lt;Simon.THOBY@viveris.fr&gt;</dc:contributor>
+        <dc:contributor>Thomas Sjögren &lt;konstruktoid@users.noreply.github.com&gt;</dc:contributor>
+        <dc:contributor>Jindrich Skacel &lt;102800748+jskacel@users.noreply.github.com&gt;</dc:contributor>
+        <dc:contributor>Alexandre Skrzyniarz &lt;alexandre.skrzyniarz@laposte.net&gt;</dc:contributor>
+        <dc:contributor>Francisco Slavin &lt;fslavin@tresys.com&gt;</dc:contributor>
+        <dc:contributor>sluetze &lt;13255307+sluetze@users.noreply.github.com&gt;</dc:contributor>
+        <dc:contributor>Dave Smith &lt;dsmith@eclipse.ncsc.mil&gt;</dc:contributor>
+        <dc:contributor>David Smith &lt;dsmith@fornax.eclipse.ncsc.mil&gt;</dc:contributor>
+        <dc:contributor>Kevin Spargur &lt;kspargur@redhat.com&gt;</dc:contributor>
+        <dc:contributor>Kenneth Stailey &lt;kstailey.lists@gmail.com&gt;</dc:contributor>
+        <dc:contributor>Leland Steinke &lt;leland.j.steinke.ctr@mail.mil&gt;</dc:contributor>
+        <dc:contributor>Justin Stephenson &lt;jstephen@redhat.com&gt;</dc:contributor>
+        <dc:contributor>steven.y.gui &lt;steven_ygui@163.com&gt;</dc:contributor>
+        <dc:contributor>Brian Stinson &lt;brian@bstinson.com&gt;</dc:contributor>
+        <dc:contributor>Jake Stookey &lt;jakestookey@gmail.com&gt;</dc:contributor>
+        <dc:contributor>Nathan Strahs &lt;135379779+nathanstrahs@users.noreply.github.com&gt;</dc:contributor>
+        <dc:contributor>Jonathan Sturges &lt;jsturges@redhat.com&gt;</dc:contributor>
+        <dc:contributor>svet-se &lt;svetlin.boychev@suse.com&gt;</dc:contributor>
+        <dc:contributor>Kaushik Talathi &lt;kaushik.talathi1@ibm.com&gt;</dc:contributor>
+        <dc:contributor>teacup-on-rockingchair &lt;315160+teacup-on-rockingchair@users.noreply.github.com&gt;</dc:contributor>
+        <dc:contributor>Ian Tewksbury &lt;itewk@redhat.com&gt;</dc:contributor>
+        <dc:contributor>Philippe Thierry &lt;phil@reseau-libre.net&gt;</dc:contributor>
+        <dc:contributor>Simon THOBY &lt;git@nightmared.fr&gt;</dc:contributor>
+        <dc:contributor>Derek Thurston &lt;thegrit@gmail.com&gt;</dc:contributor>
+        <dc:contributor>tianzhenjia &lt;jiatianzhen@cmss.chinamobile.com&gt;</dc:contributor>
+        <dc:contributor>Greg Tinsley &lt;gtinsley@redhat.com&gt;</dc:contributor>
+        <dc:contributor>Paul Tittle &lt;ptittle@cmf.nrl.navy.mil&gt;</dc:contributor>
+        <dc:contributor>tom &lt;tom@localhost.localdomain&gt;</dc:contributor>
+        <dc:contributor>tomas.hudik &lt;tomas.hudik@embedit.cz&gt;</dc:contributor>
+        <dc:contributor>Jeb Trayer &lt;jeb.d.trayer@uscg.mil&gt;</dc:contributor>
+        <dc:contributor>TrilokGeer &lt;tgeer@redhat.com&gt;</dc:contributor>
+        <dc:contributor>Viktors Trubovics &lt;viktors.trubovics@suse.com&gt;</dc:contributor>
+        <dc:contributor>Nico Truzzolino &lt;nico.truzzolino@gmx.de&gt;</dc:contributor>
+        <dc:contributor>Brian Turek &lt;brian.turek@gmail.com&gt;</dc:contributor>
+        <dc:contributor>Matěj Týč &lt;matyc@redhat.com&gt;</dc:contributor>
+        <dc:contributor>Jörgen Uhr &lt;jorgen.uhr@sitevision.se&gt;</dc:contributor>
+        <dc:contributor>VadimDor &lt;29509093+VadimDor@users.noreply.github.com&gt;</dc:contributor>
+        <dc:contributor>Trevor Vaughan &lt;tvaughan@onyxpoint.com&gt;</dc:contributor>
+        <dc:contributor>vtrubovics &lt;82443408+vtrubovics@users.noreply.github.com&gt;</dc:contributor>
+        <dc:contributor>Sophia Wang &lt;huiwang@redhat.com&gt;</dc:contributor>
+        <dc:contributor>Samuel Warren &lt;swarren@redhat.com&gt;</dc:contributor>
+        <dc:contributor>wcushen &lt;54533890+wcushen@users.noreply.github.com&gt;</dc:contributor>
+        <dc:contributor>Shawn Wells &lt;shawn@redhat.com&gt;</dc:contributor>
+        <dc:contributor>Whidix &lt;31294015+Whidix@users.noreply.github.com&gt;</dc:contributor>
+        <dc:contributor>Daniel E. White &lt;linuxdan@users.noreply.github.com&gt;</dc:contributor>
+        <dc:contributor>Bernhard M. Wiedemann &lt;bwiedemann@suse.de&gt;</dc:contributor>
+        <dc:contributor>Roy Williams &lt;roywilli@roywilli.redhat.com&gt;</dc:contributor>
+        <dc:contributor>Willumpie &lt;willumpie@xs4all.nl&gt;</dc:contributor>
+        <dc:contributor>Rob Wilmoth &lt;rwilmoth@redhat.com&gt;</dc:contributor>
+        <dc:contributor>win97pro &lt;win97pro@protonmail.com&gt;</dc:contributor>
+        <dc:contributor>xcfxr &lt;xucee@qq.com&gt;</dc:contributor>
+        <dc:contributor>Lucas Yamanishi &lt;lucas.yamanishi@onyxpoint.com&gt;</dc:contributor>
+        <dc:contributor>Xirui Yang &lt;xirui.yang@oracle.com&gt;</dc:contributor>
+        <dc:contributor>Yuqing Yang &lt;yyq01323329@alibaba-inc.com&gt;</dc:contributor>
+        <dc:contributor>yarunachalam &lt;yarunachalam@suse.com&gt;</dc:contributor>
+        <dc:contributor>Guang Yee &lt;guang.yee@suse.com&gt;</dc:contributor>
+        <dc:contributor>Achilleas John Yfantis &lt;ayfantis@redhat.com&gt;</dc:contributor>
+        <dc:contributor>YiLin.Li &lt;YiLin.Li@linux.alibaba.com&gt;</dc:contributor>
+        <dc:contributor>yu410621 &lt;lihuanyu410621@gmail.com&gt;</dc:contributor>
+        <dc:contributor>Xiaojie Yuan &lt;xiyuan@redhat.com&gt;</dc:contributor>
+        <dc:contributor>yungcero &lt;133906218+yungcero@users.noreply.github.com&gt;</dc:contributor>
+        <dc:contributor>yunimoo &lt;yunimoo@nekocake.cafe&gt;</dc:contributor>
+        <dc:contributor>YuQing &lt;yyq0391@163.com&gt;</dc:contributor>
+        <dc:contributor>zhaoyun &lt;zhaoyun@kylinos.cn&gt;</dc:contributor>
+        <dc:contributor>Kevin Zimmerman &lt;kevin.zimmerman@kitware.com&gt;</dc:contributor>
+        <dc:contributor>Luigi Mario Zuccarelli &lt;luzuccar@redhat.com&gt;</dc:contributor>
+        <dc:contributor>Jan Černý &lt;jcerny@redhat.com&gt;</dc:contributor>
+        <dc:contributor>Michal Šrubař &lt;msrubar@redhat.com&gt;</dc:contributor>
+        <dc:source>https://github.com/ComplianceAsCode/content/releases/latest</dc:source>
+      </xccdf-1.2:metadata>
+      <xccdf-1.2:Profile id="xccdf_org.ssgproject.content_profile_standard">
+        <xccdf-1.2:title override="true">Standard Security Profile for SUSE Industrial Edge 1.x</xccdf-1.2:title>
+        <xccdf-1.2:description override="true">This profile offers technical guidance on the secure configuration of SUSE Industrial Edge.</xccdf-1.2:description>
+        <xccdf-1.2:select idref="xccdf_org.ssgproject.content_rule_losant_workload_is_deployed" selected="true"/>
+      </xccdf-1.2:Profile>
+      <xccdf-1.2:Group id="xccdf_org.ssgproject.content_group_losant">
+        <xccdf-1.2:title>Global common-config.yaml Rules</xccdf-1.2:title>
+        <xccdf-1.2:description>Site-wide configuration settings.</xccdf-1.2:description>
+        <xccdf-1.2:Rule selected="false" id="xccdf_org.ssgproject.content_rule_losant_workload_is_deployed" severity="medium">
+          <xccdf-1.2:title>The SUSE Industrial Edge application must be deployed on Kubernetes</xccdf-1.2:title>
+          <xccdf-1.2:description>The Kubernetes cluster must contain the expected SUSE Industrial Edge application
+workload in an organization-approved namespace.</xccdf-1.2:description>
+          <xccdf-1.2:rationale>Confirming the expected workload and namespace provides a stable starting
+point for applying application-specific security controls and prevents
+compliance results from being attributed to an unrelated cluster.</xccdf-1.2:rationale>
+          <xccdf-1.2:platform idref="#losant"/>
+          <xccdf-1.2:check system="http://scap.nist.gov/schema/ocil/2">
+            <xccdf-1.2:check-content-ref href="ssg-losant-ocil.xml" name="ocil:ssg-losant_workload_is_deployed_ocil:questionnaire:1"/>
+          </xccdf-1.2:check>
+        </xccdf-1.2:Rule>
+      </xccdf-1.2:Group>
+    </xccdf-1.2:Benchmark>
+  </ds:component>
+  <ds:component id="scap_org.open-scap_comp_ssg-losant-oval.xml" timestamp="2026-07-10T18:45:38">
+    <oval-def:oval_definitions xsi:schemaLocation="http://oval.mitre.org/XMLSchema/oval-common-5 oval-common-schema.xsd  http://oval.mitre.org/XMLSchema/oval-definitions-5 oval-definitions-schema.xsd  http://oval.mitre.org/XMLSchema/oval-definitions-5#independent independent-definitions-schema.xsd  http://oval.mitre.org/XMLSchema/oval-definitions-5#unix unix-definitions-schema.xsd  http://oval.mitre.org/XMLSchema/oval-definitions-5#linux linux-definitions-schema.xsd">
+      <oval-def:generator>
+        <oval:product_name>OVALFileLinker from SCAP Security Guide</oval:product_name>
+        <oval:product_version>ssg: [0, 1, 81], python: 3.10.5</oval:product_version>
+        <oval:schema_version>5.11</oval:schema_version>
+        <oval:timestamp>2026-07-10T18:45:38</oval:timestamp>
+      </oval-def:generator>
+    </oval-def:oval_definitions>
+  </ds:component>
+  <ds:component id="scap_org.open-scap_comp_ssg-losant-ocil.xml" timestamp="2026-07-10T18:45:38">
+    <ocil:ocil>
+      <ocil:generator>
+        <ocil:product_name>build_shorthand.py from SCAP Security Guide</ocil:product_name>
+        <ocil:product_version>ssg: 0.1.81</ocil:product_version>
+        <ocil:schema_version>2.0</ocil:schema_version>
+        <ocil:timestamp>2026-07-10T18:45:38</ocil:timestamp>
+      </ocil:generator>
+      <ocil:questionnaires>
+        <ocil:questionnaire id="ocil:ssg-losant_workload_is_deployed_ocil:questionnaire:1">
+          <ocil:title>The SUSE Industrial Edge application must be deployed on Kubernetes</ocil:title>
+          <ocil:actions>
+            <ocil:test_action_ref>ocil:ssg-losant_workload_is_deployed_action:testaction:1</ocil:test_action_ref>
+          </ocil:actions>
+        </ocil:questionnaire>
+      </ocil:questionnaires>
+      <ocil:test_actions>
+        <ocil:boolean_question_test_action id="ocil:ssg-losant_workload_is_deployed_action:testaction:1" question_ref="ocil:ssg-losant_workload_is_deployed_question:question:1">
+          <ocil:when_true>
+            <ocil:result>PASS</ocil:result>
+          </ocil:when_true>
+          <ocil:when_false>
+            <ocil:result>FAIL</ocil:result>
+          </ocil:when_false>
+        </ocil:boolean_question_test_action>
+      </ocil:test_actions>
+      <ocil:questions>
+        <ocil:boolean_question id="ocil:ssg-losant_workload_is_deployed_question:question:1">
+          <ocil:question_text>Run the following command with credentials authorized to inspect workloads:
+kubectl get deployments,statefulsets,pods --all-namespaces
+
+Verify that the expected Losant workload is present and that it runs in an
+organization-approved namespace. If it is absent or runs in an unapproved
+namespace, this is a finding.
+      Is it the case that the expected SUSE Industrial Edge workload is not present in an approved Kubernetes namespace?
+      </ocil:question_text>
+        </ocil:boolean_question>
+      </ocil:questions>
+    </ocil:ocil>
+  </ds:component>
+  <ds:component id="scap_org.open-scap_comp_ssg-losant-cpe-oval.xml" timestamp="2026-07-10T18:45:38">
+    <oval-def:oval_definitions xsi:schemaLocation="http://oval.mitre.org/XMLSchema/oval-common-5 oval-common-schema.xsd  http://oval.mitre.org/XMLSchema/oval-definitions-5 oval-definitions-schema.xsd  http://oval.mitre.org/XMLSchema/oval-definitions-5#independent independent-definitions-schema.xsd  http://oval.mitre.org/XMLSchema/oval-definitions-5#unix unix-definitions-schema.xsd  http://oval.mitre.org/XMLSchema/oval-definitions-5#linux linux-definitions-schema.xsd">
+      <oval-def:generator>
+        <oval:product_name>build_cpe.py from SCAP Security Guide</oval:product_name>
+        <oval:product_version>ssg: [0, 1, 81], python: 3.10.5</oval:product_version>
+        <oval:schema_version>5.11</oval:schema_version>
+        <oval:timestamp>2026-07-10T18:45:38</oval:timestamp>
+      </oval-def:generator>
+      <oval-def:definitions>
+        <oval-def:definition id="oval:ssg-installed_app_is_losant:def:1" version="1" class="inventory">
+          <oval-def:metadata>
+            <oval-def:title>SUSE Losant 1.0</oval-def:title>
+            <oval-def:affected family="unix">
+              <oval-def:platform>SUSE Industrial Edge 1.x</oval-def:platform>
+              <oval-def:product>SUSE Losant 1.0</oval-def:product>
+            </oval-def:affected>
+            <oval-def:reference ref_id="cpe:2.3:a:suse:losant:1.0:*:*:*:*:*:*:*" source="CPE"/>
+            <oval-def:description>The Kubernetes API resource data contains a Losant workload.</oval-def:description>
+          </oval-def:metadata>
+          <oval-def:criteria operator="AND">
+            <oval-def:criterion comment="Kubernetes deployment data contains a Losant container image" test_ref="oval:ssg-test_losant_deployment:tst:1"/>
+          </oval-def:criteria>
+        </oval-def:definition>
+      </oval-def:definitions>
+      <oval-def:tests>
+        <ind:yamlfilecontent_test id="oval:ssg-test_losant_deployment:tst:1" version="1" check="at least one" comment="Find a Losant image in Kubernetes deployments" state_operator="AND">
+          <ind:object object_ref="oval:ssg-object_losant_deployment:obj:1"/>
+          <ind:state state_ref="oval:ssg-state_losant_deployment:ste:1"/>
+        </ind:yamlfilecontent_test>
+      </oval-def:tests>
+      <oval-def:objects>
+        <ind:yamlfilecontent_object id="oval:ssg-object_losant_deployment:obj:1" version="1">
+          <ind:filepath>/kubernetes-api-resources/apis/apps/v1/deployments</ind:filepath>
+          <ind:yamlpath>.items[:].spec.template.spec.containers[:].image</ind:yamlpath>
+        </ind:yamlfilecontent_object>
+      </oval-def:objects>
+      <oval-def:states>
+        <ind:yamlfilecontent_state id="oval:ssg-state_losant_deployment:ste:1" version="1" operator="AND">
+          <ind:value datatype="record">
+            <oval-def:field name="#" datatype="string" operation="pattern match">^.*[/:_-]losant([/:_@-].*)?$</oval-def:field>
+          </ind:value>
+        </ind:yamlfilecontent_state>
+      </oval-def:states>
+    </oval-def:oval_definitions>
+  </ds:component>
+</ds:data-stream-collection>
