@@ -6,7 +6,6 @@ on:
     paths:
       - 'checklists.missionit.com/**'
       - 'docs-site/**'
-      - 'CHANGELOG.md'
       - '.github/workflows/docs-deploy.yml'
   workflow_dispatch:
 
@@ -26,17 +25,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v5
-
-      - name: Prepare changelog
-        run: |
-          {
-            printf '%s\n' '---'
-            printf '%s\n' 'title: Changelog'
-            printf '%s\n' 'description: Release history for the checklists.missionit.com site.' 
-            printf '%s\n' '---'
-            printf '\n'
-            cat CHANGELOG.md
-          } > docs-site/src/content/docs/changelog.md
 
       - name: Setup Node.js
         uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
