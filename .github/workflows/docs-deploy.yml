@@ -42,13 +42,12 @@ jobs:
       - name: Build docs site
         run: cd docs-site && pnpm run build
 
-      - name: Stage docs at the public project path
+      - name: Stage docs at the site root
         run: |
-          mkdir -p pages-artifact/checklists.missionit.com
-          cp -R docs-site/dist/. pages-artifact/checklists.missionit.com/
-          cp docs-site/dist/404.html pages-artifact/404.html
-          test -f pages-artifact/checklists.missionit.com/index.html
-          test -d pages-artifact/checklists.missionit.com/_astro
+          mkdir -p pages-artifact
+          cp -R docs-site/dist/. pages-artifact/
+          test -f pages-artifact/index.html
+          test -d pages-artifact/_astro
           test -f pages-artifact/404.html
 
       - name: Archive pages artifact
