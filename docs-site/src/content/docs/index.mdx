@@ -1,0 +1,37 @@
+---
+title: Claroty CTD MCP Server
+pagefind: false
+template: splash
+hero:
+  title: Claroty CTD MCP Server
+  tagline: Connect AI assistants to your Claroty CTD platform via the Model Context Protocol.<br/><br/>An open source project by Mission IT, a premier Claroty partner.
+  image:
+    file: ../../assets/Mission-IT-Claroty-Partner-Logo.svg
+    alt: Mission IT
+  actions:
+    - text: Get Started
+      link: /claroty-ctd-mcp/getting-started/installation/
+      variant: primary
+      icon: right-arrow
+    - text: View on GitHub
+      link: https://github.com/MissionIT/claroty-ctd-mcp
+      variant: secondary
+      icon: github
+      attrs:
+        target: _blank
+        rel: noopener noreferrer
+---
+
+import { CardGrid, Card } from '@astrojs/starlight/components';
+
+<CardGrid>
+  <Card title="AI-Powered Security Ops" icon="rocket">
+    Let AI agents investigate threats, triage detections, and analyze incidents across your Claroty CTD environment.
+  </Card>
+  <Card title="Full Spectrum Coverage" icon="puzzle">
+    Alerts, events, assets, vulnerabilities, intel, IOCs, and more through a single MCP interface.
+  </Card>
+  <Card title="Deploy Anywhere" icon="laptop">
+    Run locally as a CLI tool, Docker container, or deploy to AWS Bedrock.
+  </Card>
+</CardGrid>
