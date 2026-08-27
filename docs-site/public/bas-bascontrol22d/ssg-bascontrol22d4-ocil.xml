@@ -1,0 +1,218 @@
+<?xml version='1.0' encoding='utf-8'?>
+<ocil:ocil xmlns:ocil="http://scap.nist.gov/schema/ocil/2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <ocil:generator>
+    <ocil:product_name>build_shorthand.py from SCAP Security Guide</ocil:product_name>
+    <ocil:product_version>ssg: 0.1.81</ocil:product_version>
+    <ocil:schema_version>2.0</ocil:schema_version>
+    <ocil:timestamp>2026-08-20T15:20:50</ocil:timestamp>
+  </ocil:generator>
+  <ocil:questionnaires>
+    <ocil:questionnaire id="ocil:ssg-bas_admin_password_not_default_ocil:questionnaire:1">
+      <ocil:title>Change the Default BAScontrol Admin Password</ocil:title>
+      <ocil:actions>
+        <ocil:test_action_ref>ocil:ssg-bas_admin_password_not_default_action:testaction:1</ocil:test_action_ref>
+      </ocil:actions>
+    </ocil:questionnaire>
+    <ocil:questionnaire id="ocil:ssg-bas_firmware_current_ocil:questionnaire:1">
+      <ocil:title>Maintain BAScontrol22D on a Current Approved Firmware Revision</ocil:title>
+      <ocil:actions>
+        <ocil:test_action_ref>ocil:ssg-bas_firmware_current_action:testaction:1</ocil:test_action_ref>
+      </ocil:actions>
+    </ocil:questionnaire>
+    <ocil:questionnaire id="ocil:ssg-bas_ftp_disabled_ocil:questionnaire:1">
+      <ocil:title>Disable FTP in BAScontrol22D</ocil:title>
+      <ocil:actions>
+        <ocil:test_action_ref>ocil:ssg-bas_ftp_disabled_action:testaction:1</ocil:test_action_ref>
+      </ocil:actions>
+    </ocil:questionnaire>
+    <ocil:questionnaire id="ocil:ssg-bas_ntp_enabled_ocil:questionnaire:1">
+      <ocil:title>Enable NTP Time Synchronization</ocil:title>
+      <ocil:actions>
+        <ocil:test_action_ref>ocil:ssg-bas_ntp_enabled_action:testaction:1</ocil:test_action_ref>
+      </ocil:actions>
+    </ocil:questionnaire>
+    <ocil:questionnaire id="ocil:ssg-bas_static_ip_for_fixed_installations_ocil:questionnaire:1">
+      <ocil:title>Use a Static IP Address for Fixed BAScontrol22D Installations</ocil:title>
+      <ocil:actions>
+        <ocil:test_action_ref>ocil:ssg-bas_static_ip_for_fixed_installations_action:testaction:1</ocil:test_action_ref>
+      </ocil:actions>
+    </ocil:questionnaire>
+    <ocil:questionnaire id="ocil:ssg-bas_timezone_maps_to_utc_or_gmt_ocil:questionnaire:1">
+      <ocil:title>Configure BAScontrol22D Timezone to Map to UTC or GMT</ocil:title>
+      <ocil:actions>
+        <ocil:test_action_ref>ocil:ssg-bas_timezone_maps_to_utc_or_gmt_action:testaction:1</ocil:test_action_ref>
+      </ocil:actions>
+    </ocil:questionnaire>
+    <ocil:questionnaire id="ocil:ssg-bas_unused_protocols_disabled_ocil:questionnaire:1">
+      <ocil:title>Disable Unused BAScontrol22D Protocols</ocil:title>
+      <ocil:actions>
+        <ocil:test_action_ref>ocil:ssg-bas_unused_protocols_disabled_action:testaction:1</ocil:test_action_ref>
+      </ocil:actions>
+    </ocil:questionnaire>
+    <ocil:questionnaire id="ocil:ssg-basbackup_configuration_saved_ocil:questionnaire:1">
+      <ocil:title>Maintain a Known-Good BASbackup Configuration</ocil:title>
+      <ocil:actions>
+        <ocil:test_action_ref>ocil:ssg-basbackup_configuration_saved_action:testaction:1</ocil:test_action_ref>
+      </ocil:actions>
+    </ocil:questionnaire>
+    <ocil:questionnaire id="ocil:ssg-bascontrol22d4_controller_identity_is_verified_ocil:questionnaire:1">
+      <ocil:title>Verify the BAScontrol22D4 Controller Identity</ocil:title>
+      <ocil:actions>
+        <ocil:test_action_ref>ocil:ssg-bascontrol22d4_controller_identity_is_verified_action:testaction:1</ocil:test_action_ref>
+      </ocil:actions>
+    </ocil:questionnaire>
+  </ocil:questionnaires>
+  <ocil:test_actions>
+    <ocil:boolean_question_test_action id="ocil:ssg-bas_admin_password_not_default_action:testaction:1" question_ref="ocil:ssg-bas_admin_password_not_default_question:question:1">
+      <ocil:when_true>
+        <ocil:result>PASS</ocil:result>
+      </ocil:when_true>
+      <ocil:when_false>
+        <ocil:result>FAIL</ocil:result>
+      </ocil:when_false>
+    </ocil:boolean_question_test_action>
+    <ocil:boolean_question_test_action id="ocil:ssg-bas_firmware_current_action:testaction:1" question_ref="ocil:ssg-bas_firmware_current_question:question:1">
+      <ocil:when_true>
+        <ocil:result>PASS</ocil:result>
+      </ocil:when_true>
+      <ocil:when_false>
+        <ocil:result>FAIL</ocil:result>
+      </ocil:when_false>
+    </ocil:boolean_question_test_action>
+    <ocil:boolean_question_test_action id="ocil:ssg-bas_ftp_disabled_action:testaction:1" question_ref="ocil:ssg-bas_ftp_disabled_question:question:1">
+      <ocil:when_true>
+        <ocil:result>PASS</ocil:result>
+      </ocil:when_true>
+      <ocil:when_false>
+        <ocil:result>FAIL</ocil:result>
+      </ocil:when_false>
+    </ocil:boolean_question_test_action>
+    <ocil:boolean_question_test_action id="ocil:ssg-bas_ntp_enabled_action:testaction:1" question_ref="ocil:ssg-bas_ntp_enabled_question:question:1">
+      <ocil:when_true>
+        <ocil:result>PASS</ocil:result>
+      </ocil:when_true>
+      <ocil:when_false>
+        <ocil:result>FAIL</ocil:result>
+      </ocil:when_false>
+    </ocil:boolean_question_test_action>
+    <ocil:boolean_question_test_action id="ocil:ssg-bas_static_ip_for_fixed_installations_action:testaction:1" question_ref="ocil:ssg-bas_static_ip_for_fixed_installations_question:question:1">
+      <ocil:when_true>
+        <ocil:result>PASS</ocil:result>
+      </ocil:when_true>
+      <ocil:when_false>
+        <ocil:result>FAIL</ocil:result>
+      </ocil:when_false>
+    </ocil:boolean_question_test_action>
+    <ocil:boolean_question_test_action id="ocil:ssg-bas_timezone_maps_to_utc_or_gmt_action:testaction:1" question_ref="ocil:ssg-bas_timezone_maps_to_utc_or_gmt_question:question:1">
+      <ocil:when_true>
+        <ocil:result>PASS</ocil:result>
+      </ocil:when_true>
+      <ocil:when_false>
+        <ocil:result>FAIL</ocil:result>
+      </ocil:when_false>
+    </ocil:boolean_question_test_action>
+    <ocil:boolean_question_test_action id="ocil:ssg-bas_unused_protocols_disabled_action:testaction:1" question_ref="ocil:ssg-bas_unused_protocols_disabled_question:question:1">
+      <ocil:when_true>
+        <ocil:result>PASS</ocil:result>
+      </ocil:when_true>
+      <ocil:when_false>
+        <ocil:result>FAIL</ocil:result>
+      </ocil:when_false>
+    </ocil:boolean_question_test_action>
+    <ocil:boolean_question_test_action id="ocil:ssg-basbackup_configuration_saved_action:testaction:1" question_ref="ocil:ssg-basbackup_configuration_saved_question:question:1">
+      <ocil:when_true>
+        <ocil:result>PASS</ocil:result>
+      </ocil:when_true>
+      <ocil:when_false>
+        <ocil:result>FAIL</ocil:result>
+      </ocil:when_false>
+    </ocil:boolean_question_test_action>
+    <ocil:boolean_question_test_action id="ocil:ssg-bascontrol22d4_controller_identity_is_verified_action:testaction:1" question_ref="ocil:ssg-bascontrol22d4_controller_identity_is_verified_question:question:1">
+      <ocil:when_true>
+        <ocil:result>PASS</ocil:result>
+      </ocil:when_true>
+      <ocil:when_false>
+        <ocil:result>FAIL</ocil:result>
+      </ocil:when_false>
+    </ocil:boolean_question_test_action>
+  </ocil:test_actions>
+  <ocil:questions>
+    <ocil:boolean_question id="ocil:ssg-bas_admin_password_not_default_question:question:1">
+      <ocil:question_text>Access the BAScontrol22D web interface and open System Config &gt; Admin.
+Review the configured administrative account and verify the password has been
+changed from the vendor-default value to an organization-approved password.
+If the administrative password is still set to the default value, this is a finding.
+      Is it the case that the BAScontrol22D admin password is still set to the default value?
+      </ocil:question_text>
+    </ocil:boolean_question>
+    <ocil:boolean_question id="ocil:ssg-bas_firmware_current_question:question:1">
+      <ocil:question_text>Access the BAScontrol22D web interface and review the displayed firmware revision.
+Compare the installed revision to the currently approved firmware baseline for
+the deployment or the latest vendor-approved revision in local maintenance guidance.
+If the controller firmware is out of date or not approved for deployment, this is a finding.
+      Is it the case that the controller firmware is not current or not approved for deployment?
+      </ocil:question_text>
+    </ocil:boolean_question>
+    <ocil:boolean_question id="ocil:ssg-bas_ftp_disabled_question:question:1">
+      <ocil:question_text>Access the BAScontrol22D web interface and open System Config &gt; Admin.
+In the Enable Protocol section, verify the FTP option is not selected.
+If FTP is enabled without explicit authorization, this is a finding.
+      Is it the case that FTP is enabled on the controller?
+      </ocil:question_text>
+    </ocil:boolean_question>
+    <ocil:boolean_question id="ocil:ssg-bas_ntp_enabled_question:question:1">
+      <ocil:question_text>Access the BAScontrol22D web interface and open Set Time.
+In the NTP Configuration section, verify:
+
+- NTP Enabled is selected
+- NTP Server is set to an approved time source
+- Refresh is configured according to site requirements
+
+If NTP is disabled or not configured with an approved time source, this is a finding.
+      Is it the case that NTP is not enabled or is not configured with an approved time server?
+      </ocil:question_text>
+    </ocil:boolean_question>
+    <ocil:boolean_question id="ocil:ssg-bas_static_ip_for_fixed_installations_question:question:1">
+      <ocil:question_text>Access the BAScontrol22D web interface and open System Config &gt; Wired/IP.
+Review the IP Mode setting. For fixed installations, verify it is set to
+STATIC and that the configured address, netmask, and gateway values match
+the approved network design.
+If a fixed installation is configured for DHCP, this is a finding.
+      Is it the case that the controller is configured to use DHCP for a fixed installation?
+      </ocil:question_text>
+    </ocil:boolean_question>
+    <ocil:boolean_question id="ocil:ssg-bas_timezone_maps_to_utc_or_gmt_question:question:1">
+      <ocil:question_text>Access the BAScontrol22D web interface and open Set Time.
+In the NTP Configuration section, review the configured
+Time Zone value and verify it maps to UTC or GMT as required by the site.
+If the configured timezone does not map to UTC or GMT, this is a finding.
+      Is it the case that the BAScontrol22D timezone is not configured to map to UTC or GMT?
+      </ocil:question_text>
+    </ocil:boolean_question>
+    <ocil:boolean_question id="ocil:ssg-bas_unused_protocols_disabled_question:question:1">
+      <ocil:question_text>Access the BAScontrol22D web interface and open System Config &gt; Admin.
+In the Enable Protocol section, review the configured protocol set,
+including BACnet/IP, Sedona, BACnet MS/TP, Modbus, Wall Setter, and FTP when present.
+Verify that only the protocols required for the approved deployment remain enabled.
+If unnecessary protocols remain enabled, this is a finding.
+      Is it the case that one or more unused BAScontrol22D protocols remain enabled?
+      </ocil:question_text>
+    </ocil:boolean_question>
+    <ocil:boolean_question id="ocil:ssg-basbackup_configuration_saved_question:question:1">
+      <ocil:question_text>Access the BAScontrol22D main interface and verify that the BASbackup
+function has been used to save a current known-good configuration.
+Review local administrative records or the designated backup repository and
+confirm that a recent backup exists for the deployed controller.
+If a current BASbackup configuration is not available, this is a finding.
+      Is it the case that a current BASbackup configuration is not available?
+      </ocil:question_text>
+    </ocil:boolean_question>
+    <ocil:boolean_question id="ocil:ssg-bascontrol22d4_controller_identity_is_verified_question:question:1">
+      <ocil:question_text>Using the controller's approved management interface, review its device
+information and verify that the model is BAScontrol22D and the hardware revision
+is 4. If the model or hardware revision does not match, this is a finding.
+      Is it the case that the controller cannot be identified as a supported BAScontrol22D4 device?
+      </ocil:question_text>
+    </ocil:boolean_question>
+  </ocil:questions>
+</ocil:ocil>
