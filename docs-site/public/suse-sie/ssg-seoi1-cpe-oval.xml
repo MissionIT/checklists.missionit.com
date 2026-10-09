@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<oval-def:oval_definitions xmlns:ind="http://oval.mitre.org/XMLSchema/oval-definitions-5#independent" xmlns:oval="http://oval.mitre.org/XMLSchema/oval-common-5" xmlns:oval-def="http://oval.mitre.org/XMLSchema/oval-definitions-5" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://oval.mitre.org/XMLSchema/oval-common-5 oval-common-schema.xsd  http://oval.mitre.org/XMLSchema/oval-definitions-5 oval-definitions-schema.xsd  http://oval.mitre.org/XMLSchema/oval-definitions-5#independent independent-definitions-schema.xsd  http://oval.mitre.org/XMLSchema/oval-definitions-5#unix unix-definitions-schema.xsd  http://oval.mitre.org/XMLSchema/oval-definitions-5#linux linux-definitions-schema.xsd">
+  <oval-def:generator>
+    <oval:product_name>build_cpe.py from SCAP Security Guide</oval:product_name>
+    <oval:product_version>ssg: [0, 1, 81], python: 3.11.9</oval:product_version>
+    <oval:schema_version>5.11</oval:schema_version>
+    <oval:timestamp>2026-10-09T18:36:53</oval:timestamp>
+  </oval-def:generator>
+  <oval-def:definitions>
+    <oval-def:definition id="oval:ssg-installed_app_is_seoi1:def:1" version="1" class="inventory">
+      <oval-def:metadata>
+        <oval-def:title>SUSE Edge Operational Intelligence 1.x</oval-def:title>
+        <oval-def:affected family="unix">
+          <oval-def:platform>SUSE Edge Operational Intelligence 1.x</oval-def:platform>
+          <oval-def:product>SUSE Edge Operational Intelligence 1.x</oval-def:product>
+        </oval-def:affected>
+        <oval-def:reference ref_id="cpe:/a:suse:seoi:1.0" source="CPE"/>
+        <oval-def:description>The Kubernetes API resource data contains a SUSE Edge Operational Intelligence 1.x workload.</oval-def:description>
+      </oval-def:metadata>
+      <oval-def:criteria operator="AND">
+        <oval-def:criterion comment="Kubernetes deployment data contains a SUSE Edge Operational Intelligence 1.x container image" test_ref="oval:ssg-test_seoi1_deployment:tst:1"/>
+      </oval-def:criteria>
+    </oval-def:definition>
+  </oval-def:definitions>
+  <oval-def:tests>
+    <ind:textfilecontent54_test id="oval:ssg-test_seoi1_deployment:tst:1" version="1" check="at least one" comment="Find a SUSE Edge Operational Intelligence 1.x image in Kubernetes deployments" state_operator="AND">
+      <ind:object object_ref="oval:ssg-object_seoi1_deployment:obj:1"/>
+    </ind:textfilecontent54_test>
+  </oval-def:tests>
+  <oval-def:objects>
+    <ind:textfilecontent54_object id="oval:ssg-object_seoi1_deployment:obj:1" version="1">
+      <ind:filepath>/kubernetes-api-resources/apis/apps/v1/deployments</ind:filepath>
+      <ind:pattern operation="pattern match">"image"\s*:\s*"[^"]*[/:_-]seoi1([/:_@-][^"]*)?"</ind:pattern>
+      <ind:instance datatype="int" operation="greater than or equal">1</ind:instance>
+    </ind:textfilecontent54_object>
+  </oval-def:objects>
+</oval-def:oval_definitions>
